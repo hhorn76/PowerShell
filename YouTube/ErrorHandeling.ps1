@@ -51,16 +51,11 @@ Get-ChildItem "H:\DoesNotExit" -ErrorAction Inquire
 Get-ChildItem "H:\DoesNotExit" -ea SilentlyContinue
 
 #Demonstrate Try, Catch, Finally
-Try
-{
+Try {
 new-object $objNew
-}
-Catch
-{
+} Catch {
 "caught a system exception"
-}
-Finally
-{
+} Finally {
 "Clean up"
 }
 
@@ -81,8 +76,8 @@ Send-MailMessage -to $EmailTo -from $EmailFrom -subject $EmailSubject -BodyAsHtm
 
 #Before using Write-EventLog You will have to create a New-EventLog
 $strLogSource = "New Test Event"
-New-EventLog –LogName Application –Source $strLogSource
+New-EventLog â€“LogName Application â€“Source $strLogSource
 
 #Demonstarate Write-EventLog
 $LogMessage = "Processing started (on $date )"
-Write-EventLog –LogName Application –Source $strLogSource –EntryType Warning –EventID 1 -Message $strErrorMessage
+Write-EventLog â€“LogName Application â€“Source $strLogSource â€“EntryType Warning â€“EventID 1 -Message $strErrorMessage
