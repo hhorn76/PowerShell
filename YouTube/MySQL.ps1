@@ -133,19 +133,14 @@ $cmd = New-Object MySql.Data.MySqlClient.MySqlCommand($query, $conn)
 $cmd.ExecuteNonQuery()
 
 #Using the Try, Catch and Finally Block
-Try
-{
+Try {
       
     [void][System.Reflection.Assembly]::LoadWithPartialName("MySql.Data")
     $conn = New-Object MySql.Data.MySqlClient.MySqlConnection
     $conn.Open()
     #...
-}
-Catch
-{
+} Catch {
     Write-Host "ERROR : Unable to run query : $query `n$Error[0]"
-}
-Finally
-{
+} Finally {
   $conn.Close()
 }
