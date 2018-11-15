@@ -34,14 +34,12 @@ $objJson.address.postalCode
 
 #Demonstrate Array
 $objJson.phoneNumber.Count
-ForEach($strPhone in $objJson.phoneNumber)
-{
+ForEach($strPhone in $objJson.phoneNumber) {
     Write-Host "$($strPhone.type): $($strPhone.number)"
 }
 
 $i=1
-ForEach($emojii in $objJson.emojii)
-{
+ForEach($emojii in $objJson.emojii) {
     Write-Host "Emojii$($i): $($emojii.type)"
     $i++
 }
