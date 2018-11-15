@@ -27,8 +27,7 @@ $objDataset=Invoke-Sqlcmd -InputFile $strFileLocation -Server $strSQLServer -Dat
 $objDataset.Count
 
 #Demonstrate ForEach object in ArrayCollection
-ForEach ($item in $objDataSet)
-{
+ForEach ($item in $objDataSet) {
     "User ID: "+$item.UserIdent
 }
 
