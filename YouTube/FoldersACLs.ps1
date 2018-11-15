@@ -5,8 +5,7 @@ $strHomeDir="\\MyServer\Share\home\$($objUser.SamAccountName)"
 $strHomeDir="C:\Test\Home\$($objUser.SamAccountName)"
 
 #Demonstrate folder creation
-if(!(Test-Path -Path "filesystem::$($strHomeDir)"))
-{
+if(!(Test-Path -Path "filesystem::$($strHomeDir)")) {
     New-Item –Path "filesystem::$($strHomeDir)" -Type Directory
     Write-Host "Home Directory created for $($objUser.Name)." -ForegroundColor Yellow
 }
