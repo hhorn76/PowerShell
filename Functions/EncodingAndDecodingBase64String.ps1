@@ -2,6 +2,7 @@
 Function encodePassword ($strPassword) {
     $strEncoded = [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes($strPassword))
     Write-Host $strEncoded -ForegroundColor Yellow
+    Return $strEncoded
 }
 
 
