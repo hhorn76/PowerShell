@@ -10,7 +10,5 @@ https://www.youtube.com/watch?v=tqMg1kD6qVE&list=PLo_LIoA-jp7NOGOqg3v-vlQLoTIMHr
 
 Mastering Windows PowerShell 5 Administration Video Course:
 https://www.packtpub.com/networking-and-servers/mastering-windows-powershell-5-administration-video
-
 https://www.udemy.com/course/mastering-windows-powershell-5-administration/
-
 http://shop.oreilly.com/product/0636920058618.do
