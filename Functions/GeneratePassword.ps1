@@ -6,18 +6,18 @@ function generateWebPassword {
     [System.Web.Security.Membership]::GeneratePassword(10,0)
 }
 
-# Create 10 random password susing the System.web.dll
+# Function to create 10 random password susing the System.web.dll
 function generateRandomPasswords ([int]$int) {
     1..$int | % { [System.Web.Security.Membership]::GeneratePassword(8,3) }
 }
 
-# Create password using ascii characters
+# Function to create password using ascii characters
 Function createAsciiPassword {
     $Password = ([char[]]([char]33..[char]95) + ([char[]]([char]97..[char]126)) + 0..9 | Sort-Object {Get-Random})[0..8] -join ''
     return $Password
 }
 
-# Function to Validate Password
+# Function to validate password
 Function validatePassword {
     param(
         [string]$strPwd=$(throw "Please specify password"),
@@ -46,7 +46,7 @@ Function validatePassword {
     $true
 }
 
-# Function to generate random Password
+# Function to generate random password
 Function createPassword() {
     $upper=[regex]"[A-Z]"
     $lower=[regex]"[a-z]"
