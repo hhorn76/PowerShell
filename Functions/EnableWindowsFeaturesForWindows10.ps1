@@ -38,5 +38,5 @@ disableFeature $strFeature
 # Enable .NET TCP Activation Windows Feature 
 $strFeature = 'WCF-TCP-Activation45'
 enableFeature $strFeature
-# Disable ASP.NET Windows Feature.
+# Disable .NET TCP Activation Windows Feature 
 disableFeature $strFeature
