@@ -16,10 +16,10 @@ function enableFeature ($strFeature) {
 function disableFeature ($strFeature) {
     $objState = Get-WindowsOptionalFeature -Online | Where featurename -Like $strFeature
     if ($objState.State -eq 'Enabled') {
-        Write-Host "Enabeling Windows Optional Feature: $strFeature." -ForegroundColor Yellow
+        Write-Host "Disabling Windows Optional Feature: $strFeature." -ForegroundColor Yellow
         Disable-WindowsOptionalFeature -Online -FeatureName $strFeature
     } else {
-        Write-Host "Windows Optional Feature: $strFeature is already enabled."
+        Write-Host "Windows Optional Feature: $strFeature is already disabled."
     }
 }
 
