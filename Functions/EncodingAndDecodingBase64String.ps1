@@ -6,7 +6,7 @@ Function encodePassword ($strPassword) {
 }
 
 
-#Base64 deencoding 
+#Base64 decoding 
 Function decodePassword ($strPassword) {
     $strDecoded = [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String($strPassword))
     Write-Host $strDecoded -ForegroundColor Yellow
