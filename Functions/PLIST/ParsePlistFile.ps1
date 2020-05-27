@@ -1,9 +1,9 @@
 ﻿# Function to read a PLIST file with single entry
 function ReadPlist ($xmlPlist) {
     $xmlPlist.plist.dict |       
-    foreach {
+    ForEach-Object {
         $vals = $_.SelectNodes('string'); $_.SelectNodes('key') | 
-        Foreach {$ht=@{};$i=0} {$ht[$_.'#text'] = $vals[$i++].'#text'} `
+        ForEach-Object {$ht=@{};$i=0} {$ht[$_.'#text'] = $vals[$i++].'#text'} `
                 {new-object psobject -property $ht}
     }
 }
@@ -11,20 +11,20 @@ function ReadPlist ($xmlPlist) {
 # Function to read a PLIST file with single entry using the key values
 function ReadPlistKey ($xmlPlist) {
     $xmlPlist.plist.dict | 
-    Foreach {
+    ForEach-Object {
         $_.SelectNodes('key') | 
-        Foreach {$ht=@{}} {$ht[$_.'#text'] = $_.NextSibling.'#text'} `
-                {new-object psobject -property $ht}
+        ForEach-Object {$ht=@{}} {$ht[$_.'#text'] = $_.NextSibling.'#text'} `
+                {New-Object psobject -property $ht}
     }
 }
 
 # Function to read a PLIST file with array of entries
 function ReadPlistArray ($xmlPlist) {
     $xmlPlist.plist.array.dict |       
-    foreach {
+    ForEach-Object {
         $_.SelectNodes('key') | 
-        Foreach {$ht=@{}} {$ht[$_.'#text'] = $_.NextSibling.'#text'} `
-        {new-object psobject -property $ht}
+        ForEach-Object {$ht=@{}} {$ht[$_.'#text'] = $_.NextSibling.'#text'} `
+        {New-Object psobject -property $ht}
     }
 }
 
@@ -35,7 +35,7 @@ Write-Host "apiToken:  $((ReadPlist $xmlPlist).apiToken) `n"
 Write-Host ''
 
 # Parse PLIST with single dictionary values using the key function
-Write-Host 'Parse PLIST wit single value'
+Write-Host 'Parse PLIST with single value'
 [xml]$xmlPlist = Get-Content ./SAMPLE_DICT.plist
 Write-Host "apiToken:  $((ReadPlist $xmlPlist).apiToken) `n"
 
