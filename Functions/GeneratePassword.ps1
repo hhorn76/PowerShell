@@ -141,3 +141,5 @@ validatePassword $strPassword 8 1 1 1 1
 # Usnig the function generatePassword to create a really comlex password, the function will try to recreate a password until all parameters are met.
 # generatePassword [[-numLength] <int>] [[-numUpper] <int>] [[-numLower] <int>] [[-numNumbers] <int>] [[-numSpecial] <int>] [[-i] <int>] 
 generatePassword 12 3 3 3 3 
+
+generatePassword 10 2 2 2 1
